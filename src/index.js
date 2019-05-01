@@ -1,17 +1,33 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
-import App from '../App.js'
+// import React from 'react'
+// import ReactDom from 'react-dom'
+// import App from '../App.js'
 
-class Main extends React.Component{
+// class Main extends React.Component{
 
-	render(){
+// 	render(){alert('bb')
 
-		return(
-			<BrowserRouter>
-				<App/>
-			</BrowserRouter>
-			)
-	}
-}
-ReactDom.render(<Main/>,document.getElementById('app'))
+// 		return(
+// 				<App/>
+// 			)
+// 	}
+// }
+// ReactDom.render(<Main/>,document.getElementById('app'))
+import './style.css'
+import Images from '../src/images/b2.jpeg'
+import text from './print.js'
+
+function component(){
+	
+	var btn = document.createElement("BUTTON");   // Create a <button> element
+	btn.innerHTML = "Hey CLICK ME";  
+	btn.onclick = text;
+
+	var x = document.createElement("IMG");
+	x.src = Images
+/*
+	btn.appendChild(x)
+	console.log(x)*/
+	return btn
+}	
+
+document.body.appendChild(component());
