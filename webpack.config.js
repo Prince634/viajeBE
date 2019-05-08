@@ -51,6 +51,13 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
 			}
 		]
 	},
@@ -58,7 +65,10 @@ module.exports = {
 	plugins: [
 		
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			title: 'Travel Buddy ',
+			template: 'index.html'
+		}),
 		new MiniCssExtractPlugin({
 	      // Options similar to the same options in webpackOptions.output
 	      // both options are optional
@@ -77,16 +87,8 @@ module.exports = {
 	          },
 	        }
 	    })],
-
-	    runtimeChunk:'single',
 	    splitChunks: {
-	    	cacheGroups: {
-	    		vendor: {
-		    		test: /node_modules/,
-		    		name: 'vendors',
-		    		chunks: 'all'
-		    	}	
-	    	}
+	    	chunks:'all'
 	    }
 	}
 

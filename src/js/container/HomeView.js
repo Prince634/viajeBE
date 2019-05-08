@@ -1,7 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { getInitialData } from '../action/index.js'
-
 
 class Home extends React.Component{
 
@@ -16,20 +13,4 @@ class Home extends React.Component{
 	}
 }
 
-function mapState(state){
-	const {
-		data
-	} = state.USER
-
-	return{
-		data
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    getInitialData: () => dispatch(getInitialData())
-  }
-}
-
-export default connect(mapState, mapDispatchToProps)(Home)
+export default Home

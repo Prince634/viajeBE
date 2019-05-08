@@ -5,7 +5,10 @@ class Profile extends React.Component{
 	render(){
 
 		return(
-			<p>Profile Page</p>
+			<div>
+				<p>Profile Page</p>
+				<button className="colr" onClick={()=>this.props.history.push('/')}>Go To Home Page</button>
+			</div>
 			)
 	}
 }

@@ -1,7 +1,7 @@
 import { LOAD_INITIAL_DATA } from '../helpers/type.js'
 
 const defaultState = {
-	data: {'abc':'hello'}
+	data: {}
 }
 
 export default function (state = defaultState, action){
@@ -10,7 +10,7 @@ export default function (state = defaultState, action){
 
 		case 'LOAD_INITIAL_DATA' : {
 			let newState = {
-				...state
+				
 			}
 			console.log('Reached reducerrrrrrrr')
 			return newState
