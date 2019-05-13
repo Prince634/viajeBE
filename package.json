@@ -4,12 +4,13 @@
   "description": "find your travel buddy",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js --watch",
+    "build": "webpack --config webpack.config.js --watch ",
     "server": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -31,8 +32,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-middleware": "^3.6.2"
+    "webpack": "^4.4.1",
+    "webpack-cli": "^3.3.0"
   }
 }

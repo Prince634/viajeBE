@@ -1,20 +1,22 @@
 const express = require('express')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express()
 
-const config = require('./webpack.config.js')
-
-const compiler = webpack(config);
+const path = require('path')
 
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
-}));
+/*import ReactDOMServer from 'react-dom/server'
+import { StaticRouter } from 'react-router'
+import Routes from './routes.js'
+*/
 
+app.set('views', path.join(__dirname, 'dist'));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.all('*', function(req, res) {
+
+	res.render(path.join(__dirname, 'dist', 'index.ejs'), {metaData:'Im prince'})
+})
 
 // Serve the files on port 3000.
 app.listen(4000, function () {

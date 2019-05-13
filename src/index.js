@@ -37,11 +37,10 @@ function component(){
 }	
 
 class Main extends React.Component {
-	render(){
+	render(){console.log('aaaheyyyyyyyy ooo')
 
 		return(
 			<div>
-				<Html/>
 				<p>I m Prince</p>
 			</div>
 			)

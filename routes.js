@@ -1,7 +1,19 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './src/js/container/HomeView.js'
-import Profile from './src/js/container/ProfileView.js'
+import loadable from 'react-loadable';
+
+const LoadingComponent = () => <h3>please wait...</h3>;
+
+
+const HomeView = loadable({
+	loader: () => import('./src/js/container/HomeView.js'),
+	loading: LoadingComponent
+})
+
+const ProfileView = loadable({
+	loader: () => import('./src/js/container/ProfileView.js'),
+	loading: LoadingComponent
+})
 
 class Routes extends React.Component{
 
@@ -9,8 +21,8 @@ class Routes extends React.Component{
 
 		return(
 			<Switch>
-				<Route exact path = "/" component={Home} />
-				<Route path ="/profile" component={Profile} />
+				<Route exact path = "/" component={HomeView} />
+				<Route exact path ="/profile" component={ProfileView} />
 			</Switch>
 			)
 	}
