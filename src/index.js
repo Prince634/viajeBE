@@ -20,32 +20,5 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import App from '../App.js'
 
-function component(){
-	
-	var btn = document.createElement("BUTTON");   // Create a <button> element
-	btn.innerHTML = _.join(['Hello', 'webpack'], ' ');
-	btn.onclick = 'text';
-
-	var x = document.createElement("IMG");
-	x.src = Images
-
-	btn.appendChild(Html)
-/*
-	btn.appendChild(x)
-	console.log(x)*/
-	return btn
-}	
-
-class Main extends React.Component {
-	render(){console.log('aaaheyyyyyyyy ooo')
-
-		return(
-			<div>
-				<p>I m Prince</p>
-			</div>
-			)
-	}
-
-}
 
 ReactDom.render(<App/>,document.getElementById('app'))

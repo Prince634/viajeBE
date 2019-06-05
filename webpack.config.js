@@ -105,6 +105,7 @@ let server_config = {
 
 	mode: 'development',
     devtool: 'inline-source-map',
+    target:'node',
 
 	entry:{
 		server : './server.js'
@@ -170,28 +171,7 @@ let server_config = {
 	      chunkFilename: '[id].css',
 	    }),
 
-	],
-
-
-	optimization: {
-	    minimizer: [new UglifyJsPlugin({
-	    	uglifyOptions: {
-	          output: {
-	            comments: false,
-	          },
-	        }
-	    })],
-	    splitChunks: {
-	    	cacheGroups: {
-	    		//vendor chunk
-	    		vendor: {
-	    			//sync + async chunks
-	    			chunks: 'all',
-	    			test: /node_modules/
-	    		}
-	    	}
-	    }
-	}
+	]
 
 }
 
